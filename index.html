@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>منصة المعرفة الاقتصادية – لأغراض تعليمية بحتة</title>
+    <meta name="description" content="محتوى تحليلي تعليمي حول المؤشرات الاقتصادية والاتجاهات العالمية – للمعرفة والإطلاع فقط، دون أي توصيات استثمارية." />
+    <style>
+        /* ===== 样式沿用原设计，针对RTL进行微调 ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f6fa;
+            color: #1a1a2e;
+            line-height: 1.6;
+            padding: 0 16px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: right;
+        }
+        .container {
+            max-width: 820px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 24px 0 32px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0 16px;
+            border-bottom: 1px solid #e6e9f0;
+            margin-bottom: 28px;
+        }
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0b1a33;
+            letter-spacing: -0.3px;
+        }
+        .logo span {
+            color: #2a6df4;
+        }
+        .header-tag {
+            font-size: 0.75rem;
+            color: #6b7a8f;
+            background: #eef1f7;
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+        .hero {
+            background: linear-gradient(145deg, #ffffff 0%, #f8faff 100%);
+            border-radius: 20px;
+            padding: 36px 28px 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            margin-bottom: 32px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: #e8edf9;
+            color: #1f3a6b;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 3px 14px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .hero h1 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: #0b1a33;
+            margin-bottom: 12px;
+        }
+        .hero h1 .highlight {
+            color: #2a6df4;
+        }
+        .hero p {
+            font-size: 1.05rem;
+            color: #3d4e66;
+            max-width: 600px;
+            margin-bottom: 24px;
+        }
+        .cta-wrapper {
+            margin-top: 4px;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: #1a3a6b;
+            color: #ffffff;
+            font-size: 1.05rem;
+            font-weight: 600;
+            padding: 14px 40px;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+            box-shadow: 0 4px 14px rgba(26, 58, 107, 0.25);
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.3px;
+        }
+        .cta-btn:hover {
+            background: #102a50;
+            box-shadow: 0 6px 20px rgba(26, 58, 107, 0.35);
+            transform: translateY(-2px);
+        }
+        .cta-btn:active {
+            transform: translateY(0);
+        }
+        .cta-btn .arrow {
+            display: inline-block;
+            margin-left: 0;
+            margin-right: 8px;
+            transform: scaleX(-1);
+            transition: transform 0.2s;
+        }
+        .cta-btn:hover .arrow {
+            transform: scaleX(-1) translateX(-4px);
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 18px;
+            margin-bottom: 32px;
+        }
+        .feature-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 24px 20px 22px;
+            border: 1px solid #eaedf4;
+            transition: border-color 0.2s;
+        }
+        .feature-card:hover {
+            border-color: #c8d2e6;
+        }
+        .feature-icon {
+            font-size: 1.6rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .feature-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0b1a33;
+            margin-bottom: 6px;
+        }
+        .feature-card p {
+            font-size: 0.9rem;
+            color: #4f617a;
+        }
+        .disclaimer {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 20px 24px 18px;
+            border: 1px solid #eaedf4;
+            margin-top: 8px;
+            margin-bottom: 20px;
+        }
+        .disclaimer p {
+            font-size: 0.78rem;
+            color: #6f7d94;
+            line-height: 1.7;
+        }
+        .disclaimer strong {
+            color: #4a5a72;
+        }
+        .disclaimer .warning-highlight {
+            color: #b13e3e;
+            font-weight: 700;
+        }
+        .footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-top: 16px;
+            border-top: 1px solid #e6e9f0;
+            font-size: 0.75rem;
+            color: #7a8a9e;
+            gap: 8px 16px;
+        }
+        .footer a {
+            color: #4a6a9e;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: #1a3a6b;
+            text-decoration: underline;
+        }
+        .footer-links {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        .footer-company {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            font-size: 0.7rem;
+            color: #6f7d94;
+        }
+        .footer-company strong {
+            color: #3d4e66;
+        }
+
+        /* ===== 悬浮按钮 (仅手机显示，居中) ===== */
+        .floating-btn {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 999;
+            background: #1a3a6b;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 14px 28px;
+            border-radius: 60px;
+            text-decoration: none;
+            box-shadow: 0 6px 24px rgba(26, 58, 107, 0.35);
+            transition: background 0.2s, transform 0.2s;
+            display: none;
+            letter-spacing: 0.3px;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            min-width: 140px;
+            white-space: nowrap;
+        }
+        .floating-btn:hover {
+            background: #102a50;
+            transform: translateX(-50%) scale(1.02);
+        }
+        .floating-btn:active {
+            transform: translateX(-50%) scale(0.97);
+        }
+
+        @media (max-width: 640px) {
+            .floating-btn {
+                display: block;
+            }
+            body {
+                padding-bottom: 90px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 0 12px;
+            }
+            .container {
+                padding: 16px 0 24px;
+            }
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+                padding-bottom: 12px;
+                margin-bottom: 20px;
+            }
+            .hero {
+                padding: 26px 18px 30px;
+                border-radius: 16px;
+            }
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            .hero p {
+                font-size: 0.95rem;
+            }
+            .cta-btn {
+                font-size: 0.95rem;
+                padding: 13px 32px;
+                width: 100%;
+                text-align: center;
+            }
+            .cta-wrapper {
+                width: 100%;
+            }
+            .features {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .feature-card {
+                padding: 18px 16px 16px;
+            }
+            .disclaimer {
+                padding: 16px 18px 14px;
+            }
+            .disclaimer p {
+                font-size: 0.7rem;
+            }
+            .footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+                padding-top: 14px;
+            }
+            .floating-btn {
+                font-size: 0.95rem;
+                padding: 12px 24px;
+                min-width: 120px;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .floating-btn:hover {
+                transform: translateX(-50%) scale(1.02);
+            }
+            .floating-btn:active {
+                transform: translateX(-50%) scale(0.97);
+            }
+        }
+        @media (max-width: 380px) {
+            .hero h1 {
+                font-size: 1.3rem;
+            }
+            .cta-btn {
+                font-size: 0.85rem;
+                padding: 12px 20px;
+            }
+            .floating-btn {
+                font-size: 0.85rem;
+                padding: 10px 20px;
+                min-width: 100px;
+                bottom: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">Fin<span>Insight</span></div>
+            <span class="header-tag">📘 مورد تعليمي</span>
+        </header>
+
+        <section class="hero">
+            <div class="hero-badge">📊 للمعرفة والإطلاع</div>
+            <h1>
+                قراءة في المؤشرات<br />
+                <span class="highlight">والاتجاهات الاقتصادية</span>
+            </h1>
+            <p>
+                نقدم عرضاً تحليلياً مستقلاً للبيانات الاقتصادية الكلية ومؤشرات الأسواق،
+                <strong>لغرض التعليم والاستيعاب الفكري</strong>، وليس لأي غرض استثماري أو تجاري.
+            </p>
+            <div class="cta-wrapper">
+                <!-- 按钮链接保持不变 -->
+                <a href="https://lihi1.me/3oZpR" target="_blank" rel="noopener noreferrer" class="cta-btn">
+                    انضم إلى النقاش <span class="arrow">→</span>
+                </a>
+            </div>
+        </section>
+
+        <div class="features">
+            <div class="feature-card">
+                <span class="feature-icon">📋</span>
+                <h3>عرض كلي</h3>
+                <p>ملخصات رقمية للناتج المحلي والتوظيف والإنفاق الاستهلاكي – لأغراض المقارنة والدراسة.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">📉</span>
+                <h3>خلفية تاريخية</h3>
+                <p>استعراض لتحركات أسعار الفائدة والسلع الأساسية في سياقها الزمني، دون استنتاجات مستقبلية.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🏛️</span>
+                <h3>سياسات عالمية</h3>
+                <p>متابعة لقرارات البنوك المركزية والتطورات التجارية – تُعرض كمادة معرفية فقط.</p>
+            </div>
+        </div>
+
+        <div class="disclaimer">
+            <p>
+                <span class="warning-highlight">⚠️ تنبيه هام – إخلاء مسؤولية شامل:</span><br /><br />
+                جميع المعلومات والأرقام والتحليلات المعروضة في هذه الصفحة هي <strong>لأغراض تعليمية وثقافية بحتة</strong>،
+                ولا تشكل بأي حال من الأحوال نصيحة مالية، أو استثمارية، أو قانونية، أو تجارية.
+                <br /><br />
+                <strong>لا يجوز الاعتماد على أي محتوى هنا</strong> لاتخاذ قرارات شراء أو بيع أو الاحتفاظ بأي أصل أو ورقة مالية.
+                الأداء التاريخي لا يُعد مؤشراً موثوقاً للنتائج المستقبلية، ولا نقدم أي ضمانات – صريحة أو ضمنية –
+                بشأن دقة أو اكتمال أو تحديث البيانات المعروضة.
+                <br /><br />
+                <strong>هذه المواد قابلة للخطأ والتبسيط، وقد لا تعكس الواقع الفعلي للأسواق.</strong>
+                نوصي بشدة بالتواصل مع مختصين مؤهلين ومراجعة مصادر متعددة قبل أي تصرف مالي.
+                <br /><br />
+                باستخدامك لهذه الصفحة، فإنك توافق على أن <strong>جميع المسؤوليات تقع على عاتقك وحدك</strong>،
+                وأننا غير مسؤولين عن أي خسائر أو أضرار ناتجة عن الاعتماد على المحتوى المقدم.
+            </p>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-company">
+                <span>© 2026 Insight Global Analytics. جميع الحقوق محفوظة.</span>
+            </div>
+            <div class="footer-links">
+                <a href="#" rel="nofollow">سياسة الخصوصية</a>
+                <a href="#" rel="nofollow">شروط الاستخدام</a>
+                <a href="#" rel="nofollow">من نحن</a>
+                <a href="#" rel="nofollow">اتصل بنا</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ===== 悬浮按钮 (仅手机显示，居中) ===== -->
+    <a href="https://lihi1.me/3oZpR" target="_blank" rel="noopener noreferrer" class="floating-btn">
+        انضم إلى النقاش
+    </a>
+</body>
+</html>

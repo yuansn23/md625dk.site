@@ -6,7 +6,7 @@
     <title>منصة المعرفة الاقتصادية – لأغراض تعليمية بحتة</title>
     <meta name="description" content="محتوى تحليلي تعليمي حول المؤشرات الاقتصادية والاتجاهات العالمية – للمعرفة والإطلاع فقط، دون أي توصيات استثمارية." />
     <style>
-        /* ===== 样式沿用原设计，针对RTL进行微调 ===== */
+        /* ===== 全新配色方案：冷调墨绿 + 柔灰 ===== */
         * {
             margin: 0;
             padding: 0;
@@ -14,8 +14,8 @@
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f4f6fa;
-            color: #1a1a2e;
+            background-color: #f5f7fa;
+            color: #2d3748;
             line-height: 1.6;
             padding: 0 16px;
             min-height: 100vh;
@@ -35,38 +35,38 @@
             justify-content: space-between;
             align-items: center;
             padding: 8px 0 16px;
-            border-bottom: 1px solid #e6e9f0;
+            border-bottom: 1px solid #e2e8f0;
             margin-bottom: 28px;
         }
         .logo {
             font-size: 1.25rem;
             font-weight: 700;
-            color: #0b1a33;
+            color: #1a202c;
             letter-spacing: -0.3px;
         }
         .logo span {
-            color: #2a6df4;
+            color: #2b6b6b; /* 主色墨绿 */
         }
         .header-tag {
             font-size: 0.75rem;
-            color: #6b7a8f;
-            background: #eef1f7;
+            color: #4a5568;
+            background: #edf2f7;
             padding: 4px 14px;
             border-radius: 30px;
             font-weight: 500;
         }
         .hero {
-            background: linear-gradient(145deg, #ffffff 0%, #f8faff 100%);
+            background: linear-gradient(145deg, #ffffff 0%, #f0f5f5 100%);
             border-radius: 20px;
             padding: 36px 28px 40px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 20px rgba(43, 107, 107, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.7);
             margin-bottom: 32px;
         }
         .hero-badge {
             display: inline-block;
-            background: #e8edf9;
-            color: #1f3a6b;
+            background: #e6f0f0;
+            color: #1f4a4a;
             font-size: 0.7rem;
             font-weight: 600;
             padding: 3px 14px;
@@ -79,15 +79,15 @@
             font-weight: 800;
             letter-spacing: -0.5px;
             line-height: 1.2;
-            color: #0b1a33;
+            color: #1a202c;
             margin-bottom: 12px;
         }
         .hero h1 .highlight {
-            color: #2a6df4;
+            color: #2b6b6b; /* 主色 */
         }
         .hero p {
             font-size: 1.05rem;
-            color: #3d4e66;
+            color: #4a5568;
             max-width: 600px;
             margin-bottom: 24px;
         }
@@ -96,7 +96,7 @@
         }
         .cta-btn {
             display: inline-block;
-            background: #1a3a6b;
+            background: #2b6b6b; /* 主色 */
             color: #ffffff;
             font-size: 1.05rem;
             font-weight: 600;
@@ -104,14 +104,14 @@
             border-radius: 60px;
             text-decoration: none;
             transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
-            box-shadow: 0 4px 14px rgba(26, 58, 107, 0.25);
+            box-shadow: 0 4px 14px rgba(43, 107, 107, 0.3);
             border: none;
             cursor: pointer;
             letter-spacing: 0.3px;
         }
         .cta-btn:hover {
-            background: #102a50;
-            box-shadow: 0 6px 20px rgba(26, 58, 107, 0.35);
+            background: #1f4f4f; /* 深色悬停 */
+            box-shadow: 0 6px 20px rgba(43, 107, 107, 0.4);
             transform: translateY(-2px);
         }
         .cta-btn:active {
@@ -137,11 +137,12 @@
             background: #ffffff;
             border-radius: 16px;
             padding: 24px 20px 22px;
-            border: 1px solid #eaedf4;
-            transition: border-color 0.2s;
+            border: 1px solid #e2e8f0;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
         .feature-card:hover {
-            border-color: #c8d2e6;
+            border-color: #b2c9c9;
+            box-shadow: 0 4px 12px rgba(43, 107, 107, 0.05);
         }
         .feature-icon {
             font-size: 1.6rem;
@@ -151,28 +152,28 @@
         .feature-card h3 {
             font-size: 1rem;
             font-weight: 700;
-            color: #0b1a33;
+            color: #1a202c;
             margin-bottom: 6px;
         }
         .feature-card p {
             font-size: 0.9rem;
-            color: #4f617a;
+            color: #4a5568;
         }
         .disclaimer {
             background: #ffffff;
             border-radius: 14px;
             padding: 20px 24px 18px;
-            border: 1px solid #eaedf4;
+            border: 1px solid #e2e8f0;
             margin-top: 8px;
             margin-bottom: 20px;
         }
         .disclaimer p {
             font-size: 0.78rem;
-            color: #6f7d94;
+            color: #4a5568;
             line-height: 1.7;
         }
         .disclaimer strong {
-            color: #4a5a72;
+            color: #2d3748;
         }
         .disclaimer .warning-highlight {
             color: #b13e3e;
@@ -184,17 +185,17 @@
             justify-content: space-between;
             align-items: flex-start;
             padding-top: 16px;
-            border-top: 1px solid #e6e9f0;
+            border-top: 1px solid #e2e8f0;
             font-size: 0.75rem;
-            color: #7a8a9e;
+            color: #718096;
             gap: 8px 16px;
         }
         .footer a {
-            color: #4a6a9e;
+            color: #2b6b6b;
             text-decoration: none;
         }
         .footer a:hover {
-            color: #1a3a6b;
+            color: #1f4f4f;
             text-decoration: underline;
         }
         .footer-links {
@@ -207,27 +208,27 @@
             flex-direction: column;
             gap: 4px;
             font-size: 0.7rem;
-            color: #6f7d94;
+            color: #718096;
         }
         .footer-company strong {
-            color: #3d4e66;
+            color: #2d3748;
         }
 
-        /* ===== 悬浮按钮 (仅手机显示，居中) ===== */
+        /* ===== 悬浮按钮 (仅手机) ===== */
         .floating-btn {
             position: fixed;
             bottom: 24px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 999;
-            background: #1a3a6b;
+            background: #2b6b6b;
             color: #ffffff;
             font-size: 1rem;
             font-weight: 600;
             padding: 14px 28px;
             border-radius: 60px;
             text-decoration: none;
-            box-shadow: 0 6px 24px rgba(26, 58, 107, 0.35);
+            box-shadow: 0 6px 24px rgba(43, 107, 107, 0.4);
             transition: background 0.2s, transform 0.2s;
             display: none;
             letter-spacing: 0.3px;
@@ -238,7 +239,7 @@
             white-space: nowrap;
         }
         .floating-btn:hover {
-            background: #102a50;
+            background: #1f4f4f;
             transform: translateX(-50%) scale(1.02);
         }
         .floating-btn:active {
@@ -311,14 +312,6 @@
                 padding: 12px 24px;
                 min-width: 120px;
                 bottom: 20px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            .floating-btn:hover {
-                transform: translateX(-50%) scale(1.02);
-            }
-            .floating-btn:active {
-                transform: translateX(-50%) scale(0.97);
             }
         }
         @media (max-width: 380px) {
@@ -356,7 +349,6 @@
                 <strong>لغرض التعليم والاستيعاب الفكري</strong>، وليس لأي غرض استثماري أو تجاري.
             </p>
             <div class="cta-wrapper">
-                <!-- 按钮链接保持不变 -->
                 <a href="https://lihi1.me/3oZpR" target="_blank" rel="noopener noreferrer" class="cta-btn">
                     انضم إلى النقاش <span class="arrow">→</span>
                 </a>
@@ -412,7 +404,7 @@
         </footer>
     </div>
 
-    <!-- ===== 悬浮按钮 (仅手机显示，居中) ===== -->
+    <!-- 悬浮按钮 -->
     <a href="https://lihi1.me/3oZpR" target="_blank" rel="noopener noreferrer" class="floating-btn">
         انضم إلى النقاش
     </a>
